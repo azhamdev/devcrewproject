@@ -1,11 +1,16 @@
-"use client";
-
 import React from "react";
-import {Card, CardHeader, CardBody, CardFooter, Divider, Link, Image} from "@nextui-org/react";
+import {
+  Card,
+  CardHeader,
+  CardBody,
+  CardFooter,
+  Divider,
+  Image,
+} from "@nextui-org/react";
 
-export const EventDashboardCard = () => {
+export const EventDashboardCard = ({ name, description, location, date }) => {
   return (
-    <Card className="max-w-[400px]">
+    <Card className="min-w-[400px] ">
       <CardHeader className="flex gap-3">
         <Image
           alt="nextui logo"
@@ -15,24 +20,16 @@ export const EventDashboardCard = () => {
           width={40}
         />
         <div className="flex flex-col">
-          <p className="text-md">NextUI</p>
-          <p className="text-small text-default-500">nextui.org</p>
+          <p className="text-md">{name}</p>
+          <p className="text-small text-default-500">{location}</p>
         </div>
       </CardHeader>
-      <Divider/>
+      <Divider />
       <CardBody>
-        <p>Make beautiful websites regardless of your design experience.</p>
+        <p>{description}</p>
       </CardBody>
-      <Divider/>
-      <CardFooter>
-        <Link
-          isExternal
-          showAnchorIcon
-          href="https://github.com/nextui-org/nextui"
-        >
-          Visit source code on GitHub.
-        </Link>
-      </CardFooter>
+      <Divider />
+      <CardFooter className="text-sm text-gray-400">{date}</CardFooter>
     </Card>
   );
-}
+};

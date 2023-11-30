@@ -1,4 +1,3 @@
-"use client";
 import React from "react";
 import { useState } from "react";
 import { useRouter } from "next/navigation";
@@ -7,10 +6,10 @@ import { Input, Button } from "@nextui-org/react";
 export const EventInput = () => {
   const placements = ["outside"];
   const router = useRouter();
-  const [eventName, setEventName] = useState("");
-  const [eventDescription, setEventDescription] = useState("");
-  const [eventLocation, setEventLocation] = useState("");
-  const [eventDate, setEventDate] = useState("");
+  const [name, setName] = useState("");
+  const [description, setDescription] = useState("");
+  const [location, setLocation] = useState("");
+  const [date, setDate] = useState("");
 
   async function createEvent() {
     const res = await fetch("https://eventmakers-api.vercel.app/api/events", {
@@ -19,19 +18,19 @@ export const EventInput = () => {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
-        name: eventName,
-        description: eventDescription,
-        location: eventLocation,
-        date: eventDate,
-        authorId: "",
+        name: name,
+        description: description,
+        location: location,
+        date: date,
+        authorId: "2168fcb2-0609-4bec-bf4b-c1083daa0cdd",
       }),
     });
     const data = await res.json();
     console.log(data);
-    setEventName("");
-    setEventDescription("");
-    setEventLocation("");
-    setEventDate("");
+    setName("");
+    setDescription("");
+    setLocation("");
+    setDate("");
     router.refresh();
   }
 
@@ -41,59 +40,60 @@ export const EventInput = () => {
         <div className="flex w-full flex-wrap items-end md:flex-nowrap mb-6 md:mb-0 gap-4">
           {placements.map((placement) => (
             <Input
+              isRequired
               key={placement}
-              type={eventName}
-              value={eventName}
+              type={name}
+              value={name}
               label="Event name"
               labelPlacement={placement}
               placeholder="Enter event name"
-              onChange={(e) => setEventName(e.target.value)}
+              onChange={(e) => setName(e.target.value)}
             />
           ))}
         </div>
         <div className="flex w-full flex-wrap items-end md:flex-nowrap mb-6 md:mb-0 gap-4">
           {placements.map((placement) => (
             <Input
+              isRequired
               key={placement}
-              type={eventDescription}
-              value={eventDescription}
+              type={description}
+              value={description}
               label="Event description"
               labelPlacement={placement}
               placeholder="Enter event name"
-              onChange={(e) => setEventDescription(e.target.value)}
+              onChange={(e) => setDescription(e.target.value)}
             />
           ))}
         </div>
         <div className="flex w-full flex-wrap items-end md:flex-nowrap mb-6 md:mb-0 gap-4">
           {placements.map((placement) => (
             <Input
+              isRequired
               key={placement}
-              type={eventLocation}
-              value={eventLocation}
+              type={location}
+              value={location}
               label="Event location"
               labelPlacement={placement}
               placeholder="Enter event date"
-              onChange={(e) => setEventLocation(e.target.value)}
+              onChange={(e) => setLocation(e.target.value)}
             />
           ))}
         </div>
         <div className="flex w-full flex-wrap items-end md:flex-nowrap mb-6 md:mb-0 gap-4">
           {placements.map((placement) => (
             <Input
+              isRequired
               key={placement}
-              type={eventDate}
-              value={eventDate}
+              type={date}
+              value={date}
               label="Event date"
               labelPlacement={placement}
               placeholder="Enter event date"
-              onChange={(e) => setEventDate(e.target.value)}
+              onChange={(e) => setDate(e.target.value)}
             />
           ))}
         </div>
-        <Button
-          className="bg-orange-600 text-white "
-          onClick={createEvent}
-        >
+        <Button className="bg-orange-600 text-white " onClick={createEvent}>
           Submit Event
         </Button>
       </div>
