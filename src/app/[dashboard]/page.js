@@ -2,9 +2,9 @@
 
 import { Header } from "@/components/header";
 import { EventInput } from "@/components/eventinput";
-import { EventDashboardCard } from "@/components/EventDashboardCard";
+// import { EventDashboardCard } from "@/components/EventDashboardCard";
 
-async function getEventListByUserId() {
+async function getEventListByUserId(event) {
   const res = await fetch(
     "https://eventmakers-api.vercel.app/api/events?userid=2168fcb2-0609-4bec-bf4b-c1083daa0cdd",
     { cache: "no-store" }
@@ -31,7 +31,7 @@ export default async function Page() {
           <div className="py-28 space-y-4">
             <div className="text-gray-500 text-xl ">My active events</div>
             <div className="grid grid-cols-2 lg:grid-cols-4 gap-3">
-              <EventDashboardCard />
+              {/* <EventDashboardCard /> */}
             </div>
           </div>
         </>
