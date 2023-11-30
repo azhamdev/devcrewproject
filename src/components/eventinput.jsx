@@ -91,7 +91,7 @@ export const EventInput = () => {
           ))}
         </div>
         <Button
-          className="bg-orange-600 text-white w-2/6"
+          className="bg-orange-600 text-white "
           onClick={createEvent}
         >
           Submit Event

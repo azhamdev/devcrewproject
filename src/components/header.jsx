@@ -12,8 +12,8 @@ import {
 
 export const Header = () => {
   return (
-    <header className="absolute w-full">
-      <Navbar className=" bg-orange-600 ">
+    <header>
+      <Navbar className="absolute bg-orange-600 ">
         <NavbarBrand as="div">
           <p className="font-semibold text-inherit text-lg text-white">
             Eventboom!
