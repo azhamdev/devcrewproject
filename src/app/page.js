@@ -1,3 +1,4 @@
+
 import { CardEvent } from "@/components/event/components/CardEvent";
 import { Header } from "@/components/header";
 async function getEvents() {
@@ -9,7 +10,7 @@ async function getEvents() {
   });
   const data = await res.json();
   return data;
-}
+
 
 export default async function Page() {
   const { data } = await getEvents();
