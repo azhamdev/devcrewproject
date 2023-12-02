@@ -4,6 +4,7 @@ import { useState } from "react";
 import { API_URL } from "@/config/apiUrl";
 import toast from "react-hot-toast";
 import { useRouter } from "next/navigation";
+import Cookies from "js-cookie";
 
 export const useLogin = () => {
   const router = useRouter();
@@ -29,6 +30,8 @@ export const useLogin = () => {
       body: JSON.stringify({ email, password }),
     });
     const data = await res.json();
+    Cookies.set("token", data.token);
+    Cookies.set("userId", data.data.id);
 
     if (!data) {
       setLoading(false);
