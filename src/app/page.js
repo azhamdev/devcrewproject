@@ -1,5 +1,5 @@
 import { CardEvent } from "@/components/event/components/CardEvent";
-
+import { Header } from "@/components/header";
 async function getEvents() {
   const res = await fetch("https://eventmakers-api.vercel.app/api/events", {
     method: "GET",
@@ -13,7 +13,9 @@ async function getEvents() {
 
 export default async function Page() {
   const { data } = await getEvents();
-  return <main className='p-12 space-y-6'>
+  return <div> 
+  <Header />
+    <main className='p-12 space-y-6'>
     <h1 className='text-3xl'>Active Event Now</h1>
     <div className="grid grid-cols-4 gap-4">
       {data.map(({ name, desc, date, id }) => (
@@ -26,5 +28,5 @@ export default async function Page() {
         />
       ))}
     </div>
-  </main>;
-}
+  </main>
+</div>;
