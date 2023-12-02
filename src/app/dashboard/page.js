@@ -26,14 +26,18 @@ export default async function Page() {
           </div>
         </div>
         <>
-          <div className="py-28 space-y-4">
+          <div className="py-28 space-y-4 ">
             <div className="text-gray-500 text-xl ">My active events</div>
             <div className="grid grid-cols-2 lg:grid-cols-4 gap-3">
-              {getAllEventsByUserId.data?.participants?.map(
-                ({ id, name, email, phone }) => (
-                  <EventDashboardCard />
-                )
-              )}
+              {data?.map(({ id, name, location, description, date }) => (
+                <EventDashboardCard
+                  key={id}
+                  name={name}
+                  location={location}
+                  description={description}
+                  date={date}
+                />
+              ))}
             </div>
           </div>
         </>
