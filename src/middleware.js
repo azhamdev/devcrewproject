@@ -1,7 +1,10 @@
 import { NextResponse } from "next/server";
 export default async function middleware(request) {
-  if (request.nextUrl.pathname === "/") {
-    return NextResponse.rewrite(new URL("/login", request.nextUrl));
+  const cookie = request.cookies.get("token")?.value;
+  console.log(cookie);
+
+  if (cookie) {
+    return NextResponse.next();
   }
   return NextResponse.redirect(new URL("/login", request.url));
 }
