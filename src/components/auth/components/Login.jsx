@@ -4,8 +4,6 @@ import { Link } from "@nextui-org/react";
 import { Button, Input } from "@nextui-org/react";
 import React from "react";
 import { useLogin } from "../hooks/useLogin";
-import { Image } from "@nextui-org/image";
-import imgLogin from "/public/assets/eventBoomLogin.png";
 
 export const Login = () => {
   const { loading, handleChange, handleSubmitLogin } = useLogin();
