@@ -3,9 +3,9 @@ import { EventDashboardCard } from "@/components/EventDashboardCard";
 import { EventInput } from "@/components/EventInput";
 import { cookies } from "next/headers";
 
-async function getAllEventsByUserId() {
-  const cookiesStore = cookies();
-  const userId = cookiesStore.get("userId").value;
+async function getEventsByUserId() {
+  const cookieStore = cookies();
+  const userId = cookieStore.get("userId").value;
 
   const res = await fetch(
     `https://eventmakers-api.vercel.app/api/events?userid=${userId}`,
@@ -18,8 +18,7 @@ async function getAllEventsByUserId() {
 }
 
 export default async function Page() {
-  const { data } = await getAllEventsByUserId();
-  console.log(data);
+  const { data } = await getEventsByUserId();
   return (
     <div>
       <Header />
@@ -36,14 +35,11 @@ export default async function Page() {
           <div className="py-28 space-y-3 w-screen">
             <div className="text-gray-500 text-xl ">My active events</div>
             <div className="grid grid-cols-2 lg:grid-cols-3 m-auto gap-3 ">
-              {data?.map(({ id, name, location, description, date }) => (
-                <EventDashboardCard
-                  key={id}
-                  name={name}
-                  location={location}
-                  description={description}
-                  date={date}
-                />
+              CEK
+              {data.map(({ id, name, location, description, date }) => (
+                <div>
+                  {name} {location}
+                </div>
               ))}
             </div>
           </div>
