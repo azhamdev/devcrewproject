@@ -1,11 +1,18 @@
 import { Header } from "@/components/header";
 import { EventDashboardCard } from "@/components/EventDashboardCard";
 import { EventInput } from "@/components/EventInput";
+import { cookies } from "next/headers";
 
 async function getAllEventsByUserId() {
-  const res = await fetch(`https://eventmakers-api.vercel.app/api/events`, {
-    cache: "no-store",
-  });
+  const cookiesStore = cookies();
+  const userId = cookiesStore.get("userId").value;
+
+  const res = await fetch(
+    `https://eventmakers-api.vercel.app/api/events?userid=${userId}`,
+    {
+      cache: "no-store",
+    }
+  );
   const data = await res.json();
   return data;
 }

@@ -31,7 +31,8 @@ export const useLogin = () => {
     });
     const data = await res.json();
     Cookies.set("token", data.token);
-    
+    Cookies.set("userId", data.data.id);
+
     if (!data) {
       setLoading(false);
       toast.error("Error Login!");
