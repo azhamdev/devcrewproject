@@ -17,7 +17,7 @@ export default async function ListEvents() {
   return (
     <main>
       <h1>Active Event Now</h1>
-      <div className="grid grid-cols-4 gap-4">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
         {data.map(({ name, desc, date, id }) => (
           <CardEvent key={id} name={name} desc={desc} date={date} id={id} />
         ))}
