@@ -26,9 +26,9 @@ export default async function Page() {
           </div>
         </div>
         <>
-          <div className="py-28 space-y-4 ">
+          <div className="py-28 space-y-3 w-screen">
             <div className="text-gray-500 text-xl ">My active events</div>
-            <div className="grid grid-cols-2 lg:grid-cols-4 gap-3">
+            <div className="grid grid-cols-2 lg:grid-cols-3 m-auto gap-3 ">
               {data?.map(({ id, name, location, description, date }) => (
                 <EventDashboardCard
                   key={id}

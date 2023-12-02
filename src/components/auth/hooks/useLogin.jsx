@@ -29,6 +29,9 @@ export const useLogin = () => {
       body: JSON.stringify({ email, password }),
     });
     const data = await res.json();
+    Cookies.set("token", data.token);
+    Cookies.set("userId", data.data.id);
+    localStorage.setItem("userdata", JSON.stringify(data.data));
 
     if (!data) {
       setLoading(false);
