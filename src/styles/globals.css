@@ -1,3 +1,10 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+@layer components {
+  .btn-join {
+    @apply rounded-full bg-[#FF503B] text-white
+  }
+}
