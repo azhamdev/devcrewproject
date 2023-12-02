@@ -11,7 +11,7 @@ export const Login = () => {
   return (
     <main className="space-y-3">
       <h1 className="text-3xl font-bold">Sign in to your account</h1>
-      <div className="flex gap-1 text-sm">
+      <div className="flex gap-1 text-sm items-baseline">
         <div>Don't have an account?</div>
         <Link href="/register">Register</Link>
       </div>

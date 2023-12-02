@@ -11,7 +11,7 @@ export const Register = () => {
   return (
     <main className="space-y-3">
       <h1 className="text-3xl font-bold">Register your account</h1>
-      <div className="flex gap-1 text-sm">
+      <div className="flex gap-1 text-sm items-baseline">
         <div>Have an account?</div>
         <Link href="/login">Login</Link>
       </div>
