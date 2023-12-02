@@ -2,8 +2,18 @@
 
 GET https://eventmakers-api.vercel.app/api/events
 
-
-
 ### LIST SINGLE EVENET BY USERID
-
 GET https://eventmakers-api.vercel.app/api/events?userid=2168fcb2-0609-4bec-bf4b-c1083daa0cdd
+
+### LIST PARTICIPANTS
+GET https://eventmakers-api.vercel.app/api/events/f1cc66ef-7599-461d-a506-7033b999957d
+
+### JOIN EVENTS
+POST https://eventmakers-api.vercel.app/api/join-events
+
+{
+    "name": "devcrew",
+    "email": "vino@devscale.id",
+    "phone": "08888888",
+    "eventId": "f1cc66ef-7599-461d-a506-7033b999957d"
+} 

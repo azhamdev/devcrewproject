@@ -31,8 +31,11 @@ export const Header = () => {
             </Link>
           </NavbarItem>
           <NavbarItem>
-            <Link className="text-gray-100 font-light text-xl" href="/create">
-              Create Events
+            <Link
+              className="text-gray-100 font-light text-xl"
+              href="/dashboard"
+            >
+              Dashboard
             </Link>
           </NavbarItem>
           <Dropdown placement="bottom-end">

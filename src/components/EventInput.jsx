@@ -1,3 +1,5 @@
+"use client";
+
 import React from "react";
 import { useState } from "react";
 import { useRouter } from "next/navigation";
@@ -44,7 +46,7 @@ export const EventInput = () => {
               key={placement}
               type={name}
               value={name}
-              label="Event name"
+              label="Event Name"
               labelPlacement={placement}
               placeholder="Enter event name"
               onChange={(e) => setName(e.target.value)}
@@ -58,7 +60,7 @@ export const EventInput = () => {
               key={placement}
               type={description}
               value={description}
-              label="Event description"
+              label="Description"
               labelPlacement={placement}
               placeholder="Enter event name"
               onChange={(e) => setDescription(e.target.value)}
@@ -72,9 +74,9 @@ export const EventInput = () => {
               key={placement}
               type={location}
               value={location}
-              label="Event location"
+              label="Location"
               labelPlacement={placement}
-              placeholder="Enter event date"
+              placeholder="Enter event location"
               onChange={(e) => setLocation(e.target.value)}
             />
           ))}
@@ -86,7 +88,7 @@ export const EventInput = () => {
               key={placement}
               type={date}
               value={date}
-              label="Event date"
+              label="Date"
               labelPlacement={placement}
               placeholder="Enter event date"
               onChange={(e) => setDate(e.target.value)}
