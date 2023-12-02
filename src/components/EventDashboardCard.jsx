@@ -1,6 +1,9 @@
+"use client";
+
 import React from "react";
-import { Button } from "@nextui-org/react";
+
 import {
+  Button,
   Card,
   CardHeader,
   CardBody,
@@ -10,6 +13,7 @@ import {
 } from "@nextui-org/react";
 
 import { useEffect, useState } from "react";
+import Link from "next/link";
 
 export const EventDashboardCard = ({
   name,
@@ -18,7 +22,7 @@ export const EventDashboardCard = ({
   id,
   location,
 }) => {
-  const [eventData, setEventData] = useState({});
+  const [eventData, setEventData] = useState([]);
 
   useEffect(() => {
     getEventData();
@@ -40,7 +44,7 @@ export const EventDashboardCard = ({
 
   return (
     <div className="space-y-3">
-      {eventData.data?.map(({ name, description, date, id }) => (
+      {eventData.data?.map(({ name, description, date, location, id }) => (
         <Card key={id} className="min-w-[400px] ">
           <CardHeader className="flex gap-3">
             <Image
@@ -62,9 +66,16 @@ export const EventDashboardCard = ({
           <Divider />
           <CardFooter className="flex justify-between text-sm text-gray-400">
             <div>{date}</div>
-            <Button size="sm" className="bg-orange-500 text-white">
-              Participants
-            </Button>
+            <Link href={`/dashboard/${id}`} passHref>
+              <Button
+                as="a"
+                size="sm"
+                className="bg-orange-600 text-white"
+                onClick={() => router.push(`/dashboard/${id}`)}
+              >
+                Details
+              </Button>
+            </Link>
           </CardFooter>
         </Card>
       ))}
