@@ -1,13 +1,15 @@
+"use client";
+
 import { Header } from "@/components/header";
 import { EventDashboardCard } from "@/components/EventDashboardCard";
-import { EventInput } from "@/components/EventInput";
+import { EventInput } from "@/components/eventinput";
 export default function Page() {
   return (
     <div>
       <Header />
       <div className="flex gap-10">
         <div className="flex flex-col item-center justify-center border-r bg-white w-1/4  h-screen px-6 shadow-sm space-y-6">
-          <div className="text-3xl font-bold pl-3">Submit New Event</div>
+          <div className="text-3xl font-bold ">Submit New Event</div>
           <div>
             <div>
               <EventInput />
