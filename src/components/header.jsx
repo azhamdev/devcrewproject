@@ -13,7 +13,7 @@ import {
 export const Header = () => {
   return (
     <header>
-      <Navbar className=" bg-orange-600 ">
+      <Navbar className="absolute bg-orange-600 ">
         <NavbarBrand as="div">
           <p className="font-semibold text-inherit text-lg text-white">
             Eventboom!
@@ -31,8 +31,11 @@ export const Header = () => {
             </Link>
           </NavbarItem>
           <NavbarItem>
-            <Link className="text-gray-100 font-light text-xl" href="/create">
-              Create Events
+            <Link
+              className="text-gray-100 font-light text-xl"
+              href="/dashboard"
+            >
+              Dashboard
             </Link>
           </NavbarItem>
           <Dropdown placement="bottom-end">

@@ -1,0 +1,9 @@
+### Register User
+
+POST https://eventmakers-api.vercel.app/api/auth/register
+
+{
+    "name": "devcrew",
+    "email": "123@dev.crew",
+    "password": "123456"
+}
